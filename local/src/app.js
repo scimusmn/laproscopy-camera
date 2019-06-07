@@ -18,6 +18,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
     console.error('There was an error', err); //output error message to console
   return;
   }
+  console.log('button pressed'); //indicate press
   LED.writeSync(value); //turn LED on or off depending on the button state (0 or 1)
 });
 
