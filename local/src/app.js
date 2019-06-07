@@ -5,6 +5,7 @@ var remote = require('electron').remote;
 var LED = new Gpio(27, 'out'); //use GPIO pin 4 as output
 var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
+LED.writeSync(1); //turn LED on or off depending on the button state (0 or 1)
 var process = remote.process;
 
 //remote.getCurrentWindow().closeDevTools();
@@ -19,7 +20,8 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   return;
   }
   console.log('button pressed'); //indicate press
-  LED.writeSync(value); //turn LED on or off depending on the button state (0 or 1)
+  LED.writeSync(0); //turn LED on or off depending on the button state (0 or 1)
+  setTimeout(LED.writeSync(1), 3000);
 });
 
 function unexportOnClose() { //function to run when exiting program
