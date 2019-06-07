@@ -1,4 +1,7 @@
 'use strict';
+var demoStr = "Put the things on the hooks! todo demo vid below"
+var liveFeed = "*Live Feed*"
+
 const Gpio = require('onoff').Gpio; // Import the onoff library
 var remote = require('electron').remote;
 
@@ -22,6 +25,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   console.log('button pressed'); //indicate press
   LED.writeSync(0); //turn LED on or off depending on the button state (0 or 1)
   document.getElementById("LaproCam").style.visibility = "visible";
+  document.getElementById("topText").innerHTML = liveFeed;
   setTimeout(camStandby, 5000);
 });
 
@@ -35,6 +39,7 @@ function unexportOnClose() { //function to run when exiting program
 function camStandby() {
   LED.writeSync(1);
   document.getElementById("LaproCam").style.visibility = "hidden";
+  document.getElementById("topText").innerHTML = demoStr;
 };
 
 process.on('SIGINT', unexportOnClose); //function to run when user closes using ctrl+c
