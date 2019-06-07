@@ -21,7 +21,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   }
   console.log('button pressed'); //indicate press
   LED.writeSync(0); //turn LED on or off depending on the button state (0 or 1)
-  setTimeout(LED.writeSync(1), 3000);
+  setTimeout(function(){ LED.writeSync(1); }, 3000);
 });
 
 function unexportOnClose() { //function to run when exiting program

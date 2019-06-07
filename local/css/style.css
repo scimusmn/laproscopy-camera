@@ -20,8 +20,8 @@ body {
 }
 
 cam-era {
-	width: 100%;
-	height: auto;
+	width: 100vw;
+	min-height: 100%;
 }
 
 #outer {
