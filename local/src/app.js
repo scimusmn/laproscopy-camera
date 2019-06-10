@@ -1,5 +1,6 @@
 'use strict';
 var camTimeoutID;
+var camTimeoutTime = 30000; //time in milliseconds.
 
 const Gpio = require('onoff').Gpio; // Import the onoff library
 var remote = require('electron').remote;
@@ -25,7 +26,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   LED.writeSync(0); //turn LED on or off depending on the button state (0 or 1)
   document.getElementById("LaproCam").style.visibility = "visible";
   document.getElementById("idleText").style.visibility = "hidden";
-  camTimeoutID = setTimeout(camStandby, 10000);
+  camTimeoutID = setTimeout(camStandby, camTimeoutTime);
 });
 
 function unexportOnClose() { //function to run when exiting program
