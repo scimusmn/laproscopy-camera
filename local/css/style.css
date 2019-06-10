@@ -21,9 +21,20 @@ body {
 
 cam-era {
 	position: absolute;
+	z-index: 0;
 	top: 0;
 	left: 0;
 	width: 100vw;
+}
+
+.topText {
+	z-index: 1;
+	font-size: 2em;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 #outer {
