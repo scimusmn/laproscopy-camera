@@ -27,6 +27,10 @@ cam-era {
 	width: 100vw;
 }
 
+.idleText {
+	font-size: 3em;
+}
+
 #outer {
   position: absolute;
   top:0;
