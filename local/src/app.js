@@ -4,8 +4,8 @@ var camTimeoutID;
 const Gpio = require('onoff').Gpio; // Import the onoff library
 var remote = require('electron').remote;
 
-var LED = new Gpio(27, 'out'); //use GPIO pin 4 as output
-var pushButton = new Gpio(17, 'in', 'falling', {debounceTimeout: 20}); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
+var LED = new Gpio(4, 'out'); //use GPIO pin 4 as output
+var pushButton = new Gpio(3, 'in', 'falling', {debounceTimeout: 20}); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
 LED.writeSync(1); //turn LED on or off depending on the button state (0 or 1)
 var process = remote.process;
