@@ -12,8 +12,6 @@ var pushButton = new Gpio(17, 'in', 'falling', {debounceTimeout: 20}); //use GPI
 LED.writeSync(1); //turn LED on or off depending on the button state (0 or 1)
 var process = remote.process;
 
-document.getElementById("LaproCam").style.visibility = "hidden";
-
 //remote.getCurrentWindow().closeDevTools();
 
 var obtains = [
