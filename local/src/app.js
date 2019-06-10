@@ -1,6 +1,6 @@
 'use strict';
 var camTimeoutID;
-var camTimeoutTime = 30000; //time in milliseconds.
+var camTimeoutTime = 120000; //time in milliseconds.
 
 const Gpio = require('onoff').Gpio; // Import the onoff library
 var remote = require('electron').remote;
