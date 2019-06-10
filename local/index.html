@@ -2,13 +2,20 @@
 <html lang="en">
 <meta charset="utf-8"></meta>
   <head>
-    <title>Template</title>
+    <title>Laproscopy</title>
     <script src="../common/src/muse/main.js" main="./src/app.js"></script>
   	<link rel="stylesheet" href="css/style.css"></link>
   </head>
   <body>
-        <!-- s<input type='range' id='color'></input> -->
-
+    <div class="container">
+        <!-- <video id="video" width="770" height="882" onclick="play();">
+            <source src="video/Motion.mp4" type="video/mp4" />
+        </video> -->
+        <cam-era id="LaproCam"></cam-era>
+        <div class="overlay">
+            <p id="topText">Content above your video</p>
+        </div>
+      </div>
     <p id="topText">Put the things on the hooks! todo demo vid below</p>
     <cam-era id="LaproCam" style.visibility="hidden"></cam-era>
   </body>
