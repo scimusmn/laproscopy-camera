@@ -28,7 +28,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   LED.writeSync(0); //turn LED on or off depending on the button state (0 or 1)
   document.getElementById("LaproCam").style.visibility = "visible";
   document.getElementById("topText").innerHTML = liveFeed;
-  camTimeoutID = setTimeout(camStandby, 5000);
+  camTimeoutID = setTimeout(camStandby, 10000);
 });
 
 function unexportOnClose() { //function to run when exiting program
