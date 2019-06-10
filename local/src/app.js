@@ -24,6 +24,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
   }
   LED.writeSync(0); //turn LED on or off depending on the button state (0 or 1)
   document.getElementById("LaproCam").style.visibility = "visible";
+  document.getElementById("idleText").style.visibility = "hidden";
   camTimeoutID = setTimeout(camStandby, 10000);
 });
 
@@ -37,6 +38,7 @@ function unexportOnClose() { //function to run when exiting program
 function camStandby() {
   LED.writeSync(1);
   document.getElementById("LaproCam").style.visibility = "hidden";
+  document.getElementById("idleText").style.visibility = "visible";
 };
 
 process.on('SIGINT', unexportOnClose); //function to run when user closes using ctrl+c
